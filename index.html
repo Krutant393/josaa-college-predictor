@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JEE Main College Predictor</title>
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main>
+  <div class="hero">
+    <h1>JEE Main College<br>Predictor 2026<br></h1>
+    <p>JEE Main College Predictor 2026 tool helps you predict your admission chances into IIT/NIT/IIITs</p>
+
+
+    <br>
+    <br>
+    <br>
+    
+    <div class="card">
+      <h2>Enter details to predict college</h2>
+
+      <form class="abc" onsubmit="return false;">
+
+        <div class="form-group">
+          <label for="rank">JEE Main Rank</label>
+          <input type="number" id="rank" placeholder="Enter your Rank"/>
+          <p class="rank-note">CRL Rank or Category Rank for categories</p>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <div class="select-wrapper">
+            <select id="category">
+              <option value="" disabled selected>Select category</option>
+              <option>OPEN</option>
+              <option>OBC-NCL</option>
+              <option>SC</option>
+              <option>ST</option>
+
+
+              <option>EWS</option>
+              <option>PwD</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="state">Class 12th Domicile State</label>
+          <div class="select-wrapper">
+            <select id="state">
+ 
+                <option value="" disabled selected>Select state</option>
+
+
+    
+                <option>Andhra Pradesh</option>
+
+      <option>Bihar</option>
+     <option>Delhi</option>
+ <option>Gujarat</option>
+  <option>Haryana</option>
+            
+     <option>Karnataka</option>
+     <option>Kerala</option> <option>Madhya Pradesh</option>
+ <option>Maharashtra</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+
+<option>Tamil Nadu</option>
+ <option>Telangana</option>
+              <option>Uttar Pradesh</option>
+
+              <option>West Bengal</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+<div class="form-group">
+<label>Gender</label>
+          <div class="gender-group">
+
+    <div class="gender-option">
+ <input type="radio" name="gender" id="male" value="male"/>
+     <label for="male">
+                <span class="radio-dot"></span>
+                Male
+        </label>
+     </div>
+
+ <div class="gender-option">
+ <input type="radio" name="gender" id="female" value="female"/>
+ <label for="female">
+    <span class="radio-dot"></span>
+     Female
+      </label>
+            </div>
+
+          </div>
+        </div>
+
+<button class="btn-predict" type="submit">
+          Predict My College
+        </button>
+
+
+      </form>
+
+
+   <br>
+   
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <script src="script.js"></script>
+</main>
+
+</body>
+</html>
