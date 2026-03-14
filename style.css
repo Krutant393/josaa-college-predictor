@@ -60,8 +60,8 @@ main {
   background: #dddedb;
   border-radius: 18px;
   padding: 32px 32px 28px;
-  width: 550px;
-  min-width: 320px;
+  width: 30000px;
+  min-width: 450px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.18);
   
 }
@@ -184,23 +184,23 @@ select:focus {
   color: #555;
   transition: all 0.2s;
   margin: 0;
-}
+}q  
 
 .gender-option input[type="radio"]:checked + label {
-  border-color: #1565f5;
-  background: #eff4ff;
-  color: #1565f5;
+border-color: #1565f5;
+background: #eff4ff;
+color: #1565f5;
 }
 
 .radio-dot {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s;
+width: 16px;
+height: 16px;
+border: 2px solid #ccc;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+     transition: border-color 0.2s;
 }
 
 .gender-option input[type="radio"]:checked + label .radio-dot {
@@ -208,28 +208,27 @@ select:focus {
 }
 
 .gender-option input[type="radio"]:checked + label .radio-dot::after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: #1565f5;
-  border-radius: 50%;
+content: '';
+width: 8px;
+height: 8px;
+    background: #1565f5;
+border-radius: 50%;
 }
 
 
 .btn-predict {
-  width: 100%;
-  padding: 14px;
-  background: #3681aa;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-  cursor: pointer;
-  margin-top: 20px;
-  letter-spacing: 0.3px;
-  transition: background 0.2s, transform 0.1s;
+width: 100%;
+     padding: 14px;
+       background: #3681aa;
+      color: #fff;
+       border: none;
+     border-radius: 10px;font-family: 'Nunito', sans-serif;
+font-size: 1rem;
+font-weight: 800;
+cursor: pointer;
+margin-top: 20px;
+letter-spacing: 0.3px;
+transition: background 0.2s, transform 0.1s;
 }
 
 .btn-predict:hover {
@@ -254,4 +253,71 @@ select:focus {
 #xyz{
 color:black;
 
+}
+
+
+#newdiv{
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    width: 100%;
+}
+
+/* ── Quota radio buttons ── */
+.quota-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.quota-group input[type="radio"] {
+  display: none;
+}
+
+.quota-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid #d1e8e6;
+  background: #f0faf9;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  min-width: 72px;
+}
+
+.quota-btn:hover {
+  border-color: #3b827d;
+  background: #e0f5f3;
+}
+
+.quota-group input[type="radio"]:checked + .quota-btn {
+  background: #3b827d;
+  border-color: #3b827d;
+  box-shadow: 0 4px 14px rgba(59, 130, 125, 0.3);
+}
+
+.quota-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #3b827d;
+  letter-spacing: 0.5px;
+}
+
+.quota-sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #7aadaa;
+}
+
+.quota-group input[type="radio"]:checked + .quota-btn .quota-title {
+  color: #ffffff;
+}
+
+.quota-group input[type="radio"]:checked + .quota-btn .quota-sub {
+  color: #c8eeec;
 }
