@@ -4,130 +4,136 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JEE Main College Predictor</title>
-
- 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
-
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 <main>
   <div class="hero">
-    <h1>JEE Main College<br>Predictor 2026<br></h1>
+    <h1>JEE Main College<br>Predictor 2026</h1>
     <p>JEE Main College Predictor 2026 tool helps you predict your admission chances into IIT/NIT/IIITs</p>
 
+    <br><br><br>
 
-    <br>
-    <br>
-    <br>
-    
+    <div id="newdiv">
     <div class="card">
       <h2>Enter details to predict college</h2>
 
       <form class="abc" onsubmit="return false;">
 
+        <!-- Rank -->
         <div class="form-group">
           <label for="rank">JEE Main Rank</label>
           <input type="number" id="rank" placeholder="Enter your Rank"/>
           <p class="rank-note">CRL Rank or Category Rank for categories</p>
         </div>
 
+        <!-- Category -->
         <div class="form-group">
           <label for="category">Category</label>
           <div class="select-wrapper">
             <select id="category">
               <option value="" disabled selected>Select category</option>
-              <option>OPEN</option>
-              <option>OBC-NCL</option>
-              <option>SC</option>
-              <option>ST</option>
-
-
-              <option>EWS</option>
-              <option>PwD</option>
-
+              <option value="OPEN">OPEN</option>
+              <option value="OBC-NCL">OBC-NCL</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="EWS">EWS</option>
+              <option value="PwD">PwD</option>
             </select>
           </div>
         </div>
 
+        <!-- State -->
         <div class="form-group">
           <label for="state">Class 12th Domicile State</label>
           <div class="select-wrapper">
             <select id="state">
- 
-                <option value="" disabled selected>Select state</option>
-
-
-    
-                <option>Andhra Pradesh</option>
-
-      <option>Bihar</option>
-     <option>Delhi</option>
- <option>Gujarat</option>
-  <option>Haryana</option>
-            
-     <option>Karnataka</option>
-     <option>Kerala</option> <option>Madhya Pradesh</option>
- <option>Maharashtra</option>
-<option>Punjab</option>
-<option>Rajasthan</option>
-
-<option>Tamil Nadu</option>
- <option>Telangana</option>
-              <option>Uttar Pradesh</option>
-
-              <option>West Bengal</option>
-              <option>Other</option>
+              <option value="" disabled selected>Select state</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Other">Other</option>
             </select>
           </div>
         </div>
-<div class="form-group">
-<label>Gender</label>
-          <div class="gender-group">
 
-    <div class="gender-option">
- <input type="radio" name="gender" id="male" value="male"/>
-     <label for="male">
+        <!-- Gender -->
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="gender-group">
+            <div class="gender-option">
+              <input type="radio" name="gender" id="male" value="male"/>
+              <label for="male">
                 <span class="radio-dot"></span>
                 Male
-        </label>
-     </div>
-
- <div class="gender-option">
- <input type="radio" name="gender" id="female" value="female"/>
- <label for="female">
-    <span class="radio-dot"></span>
-     Female
-      </label>
+              </label>
             </div>
-
+            <div class="gender-option">
+              <input type="radio" name="gender" id="female" value="female"/>
+              <label for="female">
+                <span class="radio-dot"></span>
+                Female
+              </label>
+            </div>
           </div>
         </div>
 
-<button class="btn-predict" type="submit">
+        <!-- ── QUOTA ── -->
+        <div class="form-group">
+          <label>Admission Quota</label>
+          <p class="rank-note">HS = Home State &nbsp;|&nbsp; OS = Other State &nbsp;|&nbsp; AI = All India</p>
+          <div class="quota-group">
+            <input type="radio" name="quota" id="q-hs" value="HS"/>
+            <label for="q-hs" class="quota-btn">
+              <span class="quota-title">HS</span>
+              <span class="quota-sub">Home State</span>
+            </label>
+
+            <input type="radio" name="quota" id="q-os" value="OS"/>
+            <label for="q-os" class="quota-btn">
+              <span class="quota-title">OS</span>
+              <span class="quota-sub">Other State</span>
+            </label>
+
+            <input type="radio" name="quota" id="q-ai" value="AI"/>
+            <label for="q-ai" class="quota-btn">
+              <span class="quota-title">AI</span>
+              <span class="quota-sub">All India</span>
+            </label>
+
+            <input type="radio" name="quota" id="q-all" value="ALL" checked/>
+            <label for="q-all" class="quota-btn">
+              <span class="quota-title">ALL</span>
+              <span class="quota-sub">Show all</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-predict" type="submit">
           Predict My College
         </button>
 
-
       </form>
-
-
-   <br>
-   
-
-
+    </div>
+    <br>
     </div>
   </div>
 
-
-
-<h1>Hello</h1>
-
   <script src="script.js"></script>
 </main>
-
 </body>
 </html>
