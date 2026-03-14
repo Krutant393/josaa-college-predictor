@@ -1,151 +1,14 @@
 const form = document.querySelector(".abc");
 
-const colleges=[
-{
-    name: "NIT Nagpur",
-    branch: "Computer Science and Engineering",
-    maxRank: 7203,
-    category: "OBC-NCL",
-    state: "Other",
-    gender:"Male"
-  },
-{
-  name: "NIT Jalandhar",
-  branch: "Bio Technology",
-  maxRank: 49981,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Bio Technology",
-  maxRank: 16401,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Bio Technology",
-  maxRank: 7090,
-  category: "EWS",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Chemical Engineering",
-  maxRank: 39490,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Chemical Engineering",
-  maxRank: 12334,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Civil Engineering",
-  maxRank: 43668,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Civil Engineering",
-  maxRank: 14121,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Computer Science and Engineering",
-  maxRank: 11262,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Computer Science and Engineering",
-  maxRank: 3876,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Data Science and Engineering",
-  maxRank: 14814,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Data Science and Engineering",
-  maxRank: 5555,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Electrical Engineering",
-  maxRank: 20115,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Electrical Engineering",
-  maxRank: 7084,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Electronics and Communication Engineering",
-  maxRank: 16180,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Electronics and Communication Engineering",
-  maxRank: 5790,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Information Technology",
-  maxRank: 14615,
-  category: "OPEN",
-  state: "Other",
-  gender: "Male"
-},
-{
-  name: "NIT Jalandhar",
-  branch: "Information Technology",
-  maxRank: 5165,
-  category: "OBC-NCL",
-  state: "Other",
-  gender: "Male"
-}
-]
+let colleges = [];
+
+fetch("colleges.json")
+  .then(response => response.json())
+  .then(data => {
+    colleges = data;
+    console.log(colleges); // check if data loaded
+  })
+  .catch(error => console.error("Error loading JSON:", error));
 
    form.addEventListener("submit", function (e) {
       
@@ -194,7 +57,7 @@ const runPrediction=(user) => {
 
         const stateMatch =  
             college.state === "Other" ||
-            college.state ===user.state;
+            college.state === user.state;
 
         return categoryMatch && rankMatch && stateMatch;
     });
