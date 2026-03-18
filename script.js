@@ -5,16 +5,19 @@ fetch("colleges.json")
     .then(res => res.json())
     .then(data => {
         colleges = data;
+      //colleges.json ka array
+      // 
         console.log(`Loaded ${colleges.length} colleges`);
     })
-    .catch(() => console.warn("colleges.json not found — run /scrape first"));
+  //error  catch keyowrd
+  .catch(() => console.warn("colleges.json not found — run /scrape first"));
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const rank          = document.getElementById("rank").value.trim();
-    const category      = document.getElementById("category").value;
-    const state         = document.getElementById("state").value;
+    const rank     = document.getElementById("rank").value.trim();
+    const category = document.getElementById("category").value;
+    const state  = document.getElementById("state").value;
     const genderElement = document.querySelector('input[name="gender"]:checked');
     const quotaElement  = document.querySelector('input[name="quota"]:checked');
 
@@ -35,11 +38,11 @@ form.addEventListener("submit", function (e) {
         quota:    quotaElement ? quotaElement.value : "ALL"
     });
 });
-
+//match prediction systemm-->
 const runPrediction = (user) => {
     const results = colleges.filter(college => {
 
-        const categoryMatch = college.seatType === user.category;
+ const categoryMatch = college.seatType === user.category;
 
         const rankMatch = user.rank <= (parseInt(college.closingRank) || 999999);
 
@@ -64,17 +67,16 @@ const seatTagStyle = (type) => {
         "OBC-NCL": "background:#fff3e0;color:#7c4700;border:1px solid #ffcc80;",
         "SC":      "background:#fce4ec;color:#880e4f;border:1px solid #f48fb1;",
         "ST":      "background:#ede7f6;color:#4527a0;border:1px solid #ce93d8;",
-        "EWS":     "background:#e3f2fd;color:#1565c0;border:1px solid #90caf9;",
-        "PwD":     "background:#fdf2f8;color:#701a75;border:1px solid #f0abfc;",
+"EWS":     "background:#e3f2fd;color:#1565c0;border:1px solid #90caf9;",
+  "PwD":     "background:#fdf2f8;color:#701a75;border:1px solid #f0abfc;",
     };
     return map[type] || "background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;";
 };
 
 const displayResults = (results) => {
-
-    // ── Always remove old results before rendering new ──
+//remove olderr rsults
     const old = document.getElementById("results");
-    if (old) old.remove();
+ if (old) old.remove();
 
     const container = document.createElement("div");
     container.id = "results";
@@ -85,16 +87,14 @@ const displayResults = (results) => {
         padding: 0 0 40px;
     `;
 
-    // ── Sits inside .card, right after the <form> tag ──
+   
     document.querySelector(".abc").insertAdjacentElement("afterend", container);
 
-    // ── Empty state ──
+    
     if (!results || results.length === 0) {
         container.innerHTML = `
             <div style="
-                text-align:center;
-                padding:40px 20px;
-                background:#f8fafb;
+                                       background:#f8fafb;
                 border-radius:16px;
                 border:1.5px dashed #cbd5e1;
                 margin-top:8px;
@@ -110,7 +110,7 @@ const displayResults = (results) => {
         return;
     }
 
-    // ── Header ──
+    //css gpt
     container.innerHTML = `
         <div style="
             display:flex;
@@ -138,7 +138,8 @@ const displayResults = (results) => {
         </div>
     `;
 
-    // ── College cards ──
+
+   
     results.forEach((college, i) => {
 
         const card = document.createElement("div");
@@ -266,10 +267,13 @@ const displayResults = (results) => {
                     ${Number(college.openingRank).toLocaleString("en-IN")}
                 </strong></span>
 
+
+
             </div>
         `;
 
-        container.appendChild(card);
+ container.appendChild(card);//child card append to main karo
+ 
     });
 };
 

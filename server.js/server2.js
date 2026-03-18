@@ -52,7 +52,7 @@ async function scrapeJoSAA() {
             const selects = document.querySelectorAll('select');
             for (let i = 0; i < selects.length; i++) {
                 for (const opt of selects[i].options) {
-                    if (opt.text.trim() === 'National Institute of Technology') {
+                    if (opt.text.trim() === 'Indian Institute of Technnology') {
                         selects[i].value = opt.value;
                         selects[i].dispatchEvent(new Event('change', { bubbles: true }));
                         return;
@@ -112,7 +112,6 @@ async function scrapeJoSAA() {
             .catch(() => {});
         await new Promise(r => setTimeout(r, 1500));
 
-        // ── Step 5: Seat Type → ALL ──
         console.log('Setting Seat Type to ALL...');
 
         const seatOptions = await page.evaluate(() => {

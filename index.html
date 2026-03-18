@@ -6,30 +6,72 @@
   <title>JEE Main College Predictor</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
+
+
+  <script>
+//login nhi kiya toooooo
+  if (!localStorage.getItem("loggedIn")) {
+    window.location.href = "/login-form/login.html";
+  }
+</script>
 </head>
 
 <body>
 <main>
   <div class="hero">
-    <h1>JEE Main College<br>Predictor 2026</h1>
-    <p>JEE Main College Predictor 2026 tool helps you predict your admission chances into IIT/NIT/IIITs</p>
+    <br>
+    
+    <h1>JEE Main College<br>Predictor 2026 (JOSAA)</h1>
+    <p>JEE Main College Predictor 2026 tool helps you predict your admission chances into NIT /IIITs /GFTIS</p>
 
-    <br><br><br>
+    <br>
 
-    <div id="newdiv">
+
+
+
+  <!-- chatgpt -->
+<script>
+  if (!localStorage.getItem("loggedIn")) {
+    window.location.href = "/login-form/login.html";
+  }
+
+  const name    = localStorage.getItem("userName");
+
+
+  const email   = localStorage.getItem("userEmail");
+
+
+  const picture = localStorage.getItem("userPicture");
+
+  if (name) {
+    document.addEventListener("DOMContentLoaded", function () {
+      const el = document.getElementById("user-name");
+      if (el) el.textContent = "Welcome, " + name;
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+    <div id="newdiv">   
     <div class="card">
       <h2>Enter details to predict college</h2>
 
       <form class="abc" onsubmit="return false;">
 
-        <!-- Rank -->
         <div class="form-group">
           <label for="rank">JEE Main Rank</label>
           <input type="number" id="rank" placeholder="Enter your Rank"/>
           <p class="rank-note">CRL Rank or Category Rank for categories</p>
         </div>
 
-        <!-- Category -->
+
+        
         <div class="form-group">
           <label for="category">Category</label>
           <div class="select-wrapper">
@@ -45,33 +87,30 @@
           </div>
         </div>
 
-        <!-- State -->
+
         <div class="form-group">
           <label for="state">Class 12th Domicile State</label>
           <div class="select-wrapper">
             <select id="state">
               <option value="" disabled selected>Select state</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Delhi">Delhi</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+     <option value="Bihar">Bihar</option>
+<option value="Delhi">Delhi</option>
               <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
+     <option value="Haryana">Haryana</option>
+                       <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh<option>
               <option value="Maharashtra">Maharashtra</option>
               <option value="Punjab">Punjab</option>
               <option value="Rajasthan">Rajasthan</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="West Bengal">West Bengal</option>
+    <option value="Telangana">Telangana</option>
+                      <option value="West Bengal">West Bengal</option>
               <option value="Other">Other</option>
             </select>
           </div>
         </div>
 
-        <!-- Gender -->
+    
         <div class="form-group">
           <label>Gender</label>
           <div class="gender-group">
@@ -92,7 +131,7 @@
           </div>
         </div>
 
-        <!-- ── QUOTA ── -->
+    
         <div class="form-group">
           <label>Admission Quota</label>
           <p class="rank-note">HS = Home State &nbsp;|&nbsp; OS = Other State &nbsp;|&nbsp; AI = All India</p>
@@ -107,12 +146,12 @@
             <label for="q-os" class="quota-btn">
               <span class="quota-title">OS</span>
               <span class="quota-sub">Other State</span>
-            </label>
+   </label>
 
             <input type="radio" name="quota" id="q-ai" value="AI"/>
-            <label for="q-ai" class="quota-btn">
-              <span class="quota-title">AI</span>
-              <span class="quota-sub">All India</span>
+      <label for="q-ai" class="quota-btn">
+       <span class="quota-title">AI</span>
+      <span class="quota-sub">All India</span>
             </label>
 
             <input type="radio" name="quota" id="q-all" value="ALL" checked/>
@@ -123,7 +162,7 @@
           </div>
         </div>
 
-        <button class="btn-predict" type="submit">
+  <button class="btn-predict" type="submit">
           Predict My College
         </button>
 

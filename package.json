@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +12,16 @@
   "dependencies": {
     "axios": "^1.13.6",
     "cheerio": "^1.2.0",
-    "puppeteer": "^24.37.5"
+    "express": "^5.2.1",
+    "puppeteer": "^24.39.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krutant393/josaa-college-predictor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Krutant393/josaa-college-predictor/issues"
+  },
+  "homepage": "https://github.com/Krutant393/josaa-college-predictor#readme",
   "description": ""
 }
