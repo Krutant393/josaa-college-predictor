@@ -28,17 +28,18 @@ let password= document.getElementById("passwordx").value.trim();
 
 const user = JSON.parse(jsonPayload);
 
-  console.log("Name:",    user.name);
-  console.log("Email:",   user.email);
+  console.log("Name:",  user.name);
+  console.log("Email:",user.email);  //json parsing localStorage
   
 
-  // Save to localStorage and redirect
   localStorage.setItem("loggedIn", "true");
   localStorage.setItem("userName", user.name);
   localStorage.setItem("userEmail", user.email);
 
 
-  window.location.href = "/index.html"; 
+
+
+  window.location.href="/index.html";
 
 
   

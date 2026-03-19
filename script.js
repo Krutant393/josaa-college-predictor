@@ -10,28 +10,39 @@ fetch("colleges.json")
         console.log(`Loaded ${colleges.length} colleges`);
     })
   //error  catch keyowrd
-  .catch(() => console.warn("colleges.json not found — run /scrape first"));
+  .catch(() => console.warn("no data found in colleges.json rerun web scrapping by puppteer first(server.js)"));
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const rank     = document.getElementById("rank").value.trim();
+
     const category = document.getElementById("category").value;
-    const state  = document.getElementById("state").value;
+
+const jeeadvrank= document.getElementById("jee-adv-rank").value.trim();
+
+console.log(jeeadvrank);
+
+
+
+
     const genderElement = document.querySelector('input[name="gender"]:checked');
     const quotaElement  = document.querySelector('input[name="quota"]:checked');
 
-    if (!rank || Number(rank) <= 0) {
-        alert("Please enter a valid JEE Mains rank");
+    if (!rank  || Number(rank) <= 0) {
+        alert("Please enter a valid JEE Mains or JEE Adv rank");
+
         return;
     }
-    if (!category || !state || !genderElement) {
+
+
+    if (!category ||!genderElement) {
         alert("Please fill all details");
         return;
     }
 
     runPrediction({
-        rank:     Number(rank),
+        rank:    Number(rank),
         category: category,
         state:    state,
         gender:   genderElement.value,
@@ -170,9 +181,13 @@ const displayResults = (results) => {
             card.style.transform = "translateY(-2px)";
             card.style.boxShadow = "0 8px 32px rgba(59,130,125,0.18)";
         };
+
+
+
+
         card.onmouseleave = () => {
             card.style.transform = "translateY(0)";
-            card.style.boxShadow = "0 2px 16px rgba(59,130,125,0.08)";
+            card.style.boxShadow = "0 2px 16px rgba(73, 166, 160, 0.08)";
         };
 
         card.innerHTML += `
